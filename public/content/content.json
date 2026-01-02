@@ -1,0 +1,73 @@
+{
+  "client": {
+    "name": "Tu Marca",
+    "whatsappNumber": "5491100000000",
+    "logoUrl": "/logo.svg",
+    "city": ""
+  },
+  "hero": {
+    "headline": "Compra fácil, rápido y seguro",
+    "subheadline": "Escríbenos y te asesoramos por WhatsApp",
+    "ctaText": "Hablar por WhatsApp",
+    "ctaMessage": "Hola, quiero comprar. ¿Me asesoras por favor?"
+  },
+  "socialProof": {
+    "title": "Clientes reales",
+    "subtitle": "Mira cómo lo usan",
+    "tiktokLinks": []
+  },
+  "catalog": {
+    "title": "Catálogo",
+    "subtitle": "Elige tu producto y te lo gestionamos por WhatsApp.",
+    "products": [
+      {
+        "id": "p1",
+        "name": "Producto 1",
+        "price": "$ 0",
+        "benefit": "Beneficio corto",
+        "imageUrl": "/placeholder-product.svg",
+        "active": true
+      }
+    ]
+  },
+  "benefits": {
+    "title": "¿Por qué comprar con nosotros?",
+    "items": [
+      {
+        "title": "Respuesta rápida",
+        "description": "Te atendemos por WhatsApp en minutos.",
+        "icon": "chat"
+      },
+      {
+        "title": "Compra segura",
+        "description": "Asesoría clara antes de pagar.",
+        "icon": "shield"
+      },
+      {
+        "title": "Entrega ágil",
+        "description": "Coordinamos envío sin vueltas.",
+        "icon": "delivery"
+      },
+      {
+        "title": "Simple y directo",
+        "description": "Sin formularios largos, sin fricción.",
+        "icon": "speed"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonios",
+    "items": [
+      {
+        "quote": "Me respondieron rápido y compré sin complicaciones.",
+        "name": "Cliente verificado"
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "¿Listo para comprar?",
+    "subtitle": "Escríbenos ahora y te ayudamos a elegir.",
+    "ctaText": "Escribir por WhatsApp",
+    "ctaMessage": "Hola, quiero comprar. ¿Me ayudas a elegir?"
+  }
+}

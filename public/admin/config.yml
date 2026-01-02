@@ -1,0 +1,119 @@
+# Decap CMS config
+# Producción (Netlify): usa Identity + Git Gateway
+# Local dev: usa local_backend + decap-server
+
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "landing"
+    label: "Landing"
+    files:
+      - name: "content"
+        label: "Contenido"
+        file: "public/content/content.json"
+        format: "json"
+        fields:
+          - label: "Cliente"
+            name: "client"
+            widget: "object"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - {
+                  label: "WhatsApp (solo números)",
+                  name: "whatsappNumber",
+                  widget: "string"
+                }
+              - { label: "Ciudad", name: "city", widget: "string", required: false }
+              - { label: "Logo", name: "logoUrl", widget: "image", required: false }
+
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "headline", widget: "string" }
+              - { label: "Subtítulo", name: "subheadline", widget: "string" }
+              - { label: "Texto CTA", name: "ctaText", widget: "string" }
+              - { label: "Mensaje CTA", name: "ctaMessage", widget: "text" }
+
+          - label: "Prueba social (TikTok)"
+            name: "socialProof"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Subtítulo", name: "subtitle", widget: "string" }
+              - label: "Links de TikTok (máx 6)"
+                name: "tiktokLinks"
+                widget: "list"
+                max: 6
+                field: { label: "Link", name: "link", widget: "string" }
+
+          - label: "Catálogo"
+            name: "catalog"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Subtítulo", name: "subtitle", widget: "string" }
+              - label: "Productos"
+                name: "products"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { label: "ID", name: "id", widget: "string" }
+                  - { label: "Nombre", name: "name", widget: "string" }
+                  - { label: "Precio", name: "price", widget: "string" }
+                  - { label: "Beneficio corto", name: "benefit", widget: "string" }
+                  - { label: "Imagen", name: "imageUrl", widget: "image" }
+                  - { label: "Activo", name: "active", widget: "boolean", default: true }
+
+          - label: "Beneficios"
+            name: "benefits"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - label: "Ítems (máx 5)"
+                name: "items"
+                widget: "list"
+                max: 5
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "description", widget: "string" }
+                  - label: "Ícono"
+                    name: "icon"
+                    widget: "select"
+                    options:
+                      - { label: "Velocidad", value: "speed" }
+                      - { label: "Seguridad", value: "shield" }
+                      - { label: "Chat", value: "chat" }
+                      - { label: "Envío", value: "delivery" }
+
+          - label: "Testimonios"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Texto", name: "quote", widget: "string" }
+                  - { label: "Nombre", name: "name", widget: "string" }
+                  - { label: "Ciudad", name: "city", widget: "string", required: false }
+                  - { label: "Imagen", name: "imageUrl", widget: "image", required: false }
+
+          - label: "CTA final"
+            name: "finalCta"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Subtítulo", name: "subtitle", widget: "string" }
+              - { label: "Texto CTA", name: "ctaText", widget: "string" }
+              - { label: "Mensaje CTA", name: "ctaMessage", widget: "text" }
