@@ -27,5 +27,17 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Netlify Identity (para invitaciones del CMS) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      ;(function () {
+        var hash = window.location.hash || ''
+        if (hash.indexOf('invite_token=') !== -1 || hash.indexOf('recovery_token=') !== -1) {
+          // Asegura que el flujo de invitación/recovery se complete en /admin
+          window.location.href = '/admin/' + hash
+        }
+      })()
+    </script>
   </body>
 </html>
